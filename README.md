@@ -1,7 +1,7 @@
 # graficas
 Developers: 
 	Carla Herrera,
-	Melannie Torres 
+Melannie Torres :)
 & Francisco Monroy
 
 Technologies:
