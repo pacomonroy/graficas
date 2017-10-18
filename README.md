@@ -1,1 +1,5 @@
-# graficas Developers: Carla, Melannie & Monroy
+# graficas
+Developers: 
+	Carla Herrera,
+	Melannie Torres 
+& Francisco Monroy
