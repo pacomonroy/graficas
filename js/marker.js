@@ -145,8 +145,11 @@
     texture = createTexture();
     scene3.add(texture);
 
-    model = createModel();
-    scene4.add(model);
+    model1 = createModel("images/dark_side_of_the_moon.jpg");
+    scene4.add(model1);
+
+    model2 = createModel("images/earth1.jpg");
+    scene4.add(model2);
   };
 
   function createPlane(){
@@ -186,6 +189,18 @@
     return object;
   };
 
+  function createModel(imgSrc){
+    var object = new THREE.Object3D(),
+        geometry = new THREE.SphereGeometry(0.5, 15, 15, Math.PI),
+        texture = THREE.ImageUtils.loadTexture(imgSrc),
+        material = new THREE.MeshBasicMaterial( {map: texture} ),
+        mesh = new THREE.Mesh(geometry, material);
+
+    object.add(mesh);
+
+    return object;
+  };
+
   function updateScenes(markers){
     var corners, corner, pose, i;
 
@@ -203,14 +218,19 @@
 
       updateObject(plane1, pose.bestRotation, pose.bestTranslation);
       updateObject(plane2, pose.alternativeRotation, pose.alternativeTranslation);
-      updateObject(model, pose.bestRotation, pose.bestTranslation);
+      if(markers[0].id < 600){
+        updateObject(model1, pose.bestRotation, pose.bestTranslation);
+      } else {
+        updateObject(model2, pose.bestRotation, pose.bestTranslation);
+      }
+      
 
       updatePose("pose1", pose.bestError, pose.bestRotation, pose.bestTranslation);
       updatePose("pose2", pose.alternativeError, pose.alternativeRotation, pose.alternativeTranslation);
 
       step += 0.025;
 
-      model.rotation.z -= step;
+      model1.rotation.z -= step;
     }
 
     texture.children[0].material.map.needsUpdate = true;
