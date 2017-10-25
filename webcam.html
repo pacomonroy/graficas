@@ -10,5 +10,23 @@
 <button id="snap">Snap Photo</button>
 <canvas id="canvas" width="640" height="480"></canvas>
 <script type="text/javascript" src="js/webcam.js"></script>
+
+	<a-scene embedded artoolkit='sourceType: webcam;'>
+	<a-sphere src="https://raw.githubusercontent.com/aframevr/sample-assets/master/assets/images/space/earth_atmos_4096.jpg" radius="0.5" position="0 0.5 0" segments-height="53">
+         <a-animation attribute="scale"
+              dur="1000"
+              from= "1 1 1"
+              to="2 2 2"
+              direction='alternate-reverse'
+              easing= "ease-in-out-circ"
+              repeat="indefinite"></a-animation>
+     </a-sphere>
+		<a-marker-camera preset='kanji'></a-marker-camera>
+	</a-scene>
 </body>
+
+<script src="js/webcam.js"></script>
+<script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+<script src="https://rawgit.com/jeromeetienne/ar.js/master/aframe/build/aframe-ar.js"></script>
+<script>THREEx.ArToolkitContext.baseURL = 'https://rawgit.com/jeromeetienne/ar.js/master/three.js/'</script>
 </html>
