@@ -177,7 +177,7 @@
   function createModel(){
     var object = new THREE.Object3D(),
         geometry = new THREE.SphereGeometry(0.5, 15, 15, Math.PI),
-        texture = THREE.ImageUtils.loadTexture("images/earth.jpg"),
+        texture = THREE.ImageUtils.loadTexture("images/dark_side_of_the_moon.jpg"),
         material = new THREE.MeshBasicMaterial( {map: texture} ),
         mesh = new THREE.Mesh(geometry, material);
 
