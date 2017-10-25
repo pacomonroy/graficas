@@ -2,7 +2,14 @@
 
 <head>
   <title>Augmented Reality</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Parallax Template - Materialize</title>
 
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <script type="text/javascript" src="js/Three.js"></script>
 
   <script type="text/javascript" src="js/svd.js"></script>
@@ -16,26 +23,32 @@
 
 <body style="text-align: center; font-family: monospace;">
 
-  <video id="video" width=320 height=240 autoplay="true" style="display:none;"></video>
+  <video id="video" width=640 height=480 autoplay="true" style="display:none;"></video>
 
-  <div style="margin: 10px;"><strong>-= Augmented Reality =-</strong></div>
+  <h1 class="header center teal-text text-lighten-2">Chanson</h1>
   <div style="width: 100%;">
     <div style="width: 650px; margin-left:auto; margin-right:auto;">
-      <canvas id="canvas" style="width: 320px; height: 240px; float: left; border: solid 1px black;"></canvas>
-      <div id="container" style="width: 320px; height: 240px; float: left; border: solid 1px black; background: green;"></div>
+      <canvas id="canvas" style="width: 640px; height: 480px; float: left; display: none;"></canvas>
+      <div id="container" style="width: 320px; height: 240px; float: left; "></div>
       <div style="clear: both;"></div>
-      <div style="float: left; border: solid 1px black;">
-        <div id="container1" style="width: 320px; height: 240px; background: red;"></div>
-        <div id="pose1"></div>
+      <div style="float: left; ">
+        <div id="container1" style="width: 320px; height: 240px; display: none;"></div>
+        <div id="pose1" style=" display: none;" ></div>
       </div>
-      <div style="float: left; border: solid 1px black;">
-        <div id="container2" style="width: 320px; height: 240px; background: blue;"></div>
-        <div id="pose2"></div>
+      <div style="float: left; display: none;">
+        <div id="container2" style="width: 320px; height: 240px; "></div>
+        <div id="pose2" style=" display: none;"></div>
       </div>
     </div>
   </div>
   <div style="clear: both;"></div>
   <div style="margin: 15px;"><strong>Powered by <a href="http://code.google.com/p/js-aruco/">js-aruco</a> and <a href="https://github.com/mrdoob/three.js">Three.js</a></strong></div>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
 
 </body>
 
