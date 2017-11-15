@@ -1,5 +1,5 @@
 
-  var video, canvas, context, imageData, detector, posit;
+  var video,audio, canvas, context, imageData, detector, posit;
   var renderer1, renderer2, renderer3;
   var scene1, scene2, scene3, scene4;
   var camera1, camera2, camera3, camera4;
@@ -10,6 +10,7 @@
 
   function onLoad(){
     video = document.getElementById("video");
+    audio = document.getElementById("myAudio");
     canvas = document.getElementById("canvas");
     context = canvas.getContext("2d");
 
@@ -220,10 +221,12 @@
       updateObject(plane2, pose.alternativeRotation, pose.alternativeTranslation);
       if(markers[0].id < 600){
         updateObject(model1, pose.bestRotation, pose.bestTranslation);
+        playAudio();
       } else {
         updateObject(model2, pose.bestRotation, pose.bestTranslation);
+        pauseAudio();
       }
-      
+
 
       updatePose("pose1", pose.bestError, pose.bestRotation, pose.bestTranslation);
       updatePose("pose2", pose.alternativeError, pose.alternativeRotation, pose.alternativeTranslation);
@@ -265,6 +268,14 @@
                 + " yaw: " + Math.round(-yaw * 180.0/Math.PI)
                 + " pitch: " + Math.round(-pitch * 180.0/Math.PI)
                 + " roll: " + Math.round(roll * 180.0/Math.PI);
+  };
+
+  function playAudio() {
+      audio.play();
+  };
+
+  function pauseAudio() {
+      audio.pause();
   };
 
   window.onload = onLoad;
