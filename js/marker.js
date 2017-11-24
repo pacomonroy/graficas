@@ -1,5 +1,5 @@
 
-  var video,audio, canvas, context, imageData, detector, posit;
+  var video,audio, audio2, audio3, audio4, audio5, audio6, canvas, context, imageData, detector, posit;
   var renderer1, renderer2, renderer3;
   var scene1, scene2, scene3, scene4;
   var camera1, camera2, camera3, camera4;
@@ -11,6 +11,11 @@
   function onLoad(){
     video = document.getElementById("video");
     audio = document.getElementById("myAudio");
+    audio2 = document.getElementById("myAudio2");
+    audio3 = document.getElementById("myAudio3");
+    audio4 = document.getElementById("myAudio4");
+    audio5 = document.getElementById("myAudio5");
+    audio6 = document.getElementById("myAudio6");
     canvas = document.getElementById("canvas");
     context = canvas.getContext("2d");
 
@@ -235,30 +240,32 @@
       //justin bieber
       if(markers[0].id < 100){
         updateObject(model1, pose.bestRotation, pose.bestTranslation);
-        playAudio();
+        playAudio(1);
       }
       //van halen
       else if(markers[0].id < 220){
         updateObject(model2, pose.bestRotation, pose.bestTranslation);
-        //playAudio();
+        playAudio(2);
       }
       //u2
       else if(markers[0].id < 340){
         updateObject(model3, pose.bestRotation, pose.bestTranslation);
-        //playAudio();
+        playAudio(3);
       }
       //scorpions
       else if(markers[0].id < 670){
         updateObject(model4, pose.bestRotation, pose.bestTranslation);
-        //playAudio();
+        playAudio(4);
       }
       //hello seahorse!
       else if(markers[0].id < 900){
         updateObject(model5, pose.bestRotation, pose.bestTranslation);
+        playAudio(5);
       }
       //one direction
       else if(markers[0].id < 1010){
         updateObject(model6, pose.bestRotation, pose.bestTranslation);
+        playAudio(6);
       }
 
 
@@ -319,12 +326,41 @@
                 + " roll: " + Math.round(roll * 180.0/Math.PI);
   };
 
-  function playAudio() {
-      audio.play();
+  function playAudio(n) {
+
+    switch (n) {
+      case 1:
+        audio.play();
+        break;
+      case 2:
+        audio2.play();
+        break;
+      case 3:
+        audio3.play();
+        break;
+      case 4:
+        audio4.play();
+        break;
+      case 5:
+        audio5.play();
+        break;
+      case 6:
+        audio6.play();
+        break;
+
+      default:
+      break;
+
+    }
   };
 
   function pauseAudio() {
       audio.pause();
+      audio2.pause();
+      audio3.pause();
+      audio4.pause();
+      audio5.pause();
+      audio6.pause();
   };
 
   window.onload = onLoad;
