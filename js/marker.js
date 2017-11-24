@@ -59,6 +59,7 @@
 
       render();
     }
+
   };
 
   function snapshot(){
@@ -146,11 +147,23 @@
     texture = createTexture();
     scene3.add(texture);
 
-    model1 = createModel("images/dark_side_of_the_moon.jpg");
+    model1 = createModel("images/justin_bieber.jpg");
     scene4.add(model1);
 
-    model2 = createModel("images/earth1.jpg");
+    model2 = createModel("images/van_halen.jpg");
     scene4.add(model2);
+
+    model3 = createModel("images/u2.jpg");
+    scene4.add(model3);
+
+    model4 = createModel("images/scorpions.jpg");
+    scene4.add(model4);
+
+    model5 = createModel("images/hello_seahorse.jpg");
+    scene4.add(model5);
+
+    model6 = createModel("images/one_direction.jpg");
+    scene4.add(model6);
   };
 
   function createPlane(){
@@ -219,12 +232,33 @@
 
       updateObject(plane1, pose.bestRotation, pose.bestTranslation);
       updateObject(plane2, pose.alternativeRotation, pose.alternativeTranslation);
-      if(markers[0].id < 600){
+      //justin bieber
+      if(markers[0].id < 100){
         updateObject(model1, pose.bestRotation, pose.bestTranslation);
         playAudio();
-      } else {
+      }
+      //van halen
+      else if(markers[0].id < 220){
         updateObject(model2, pose.bestRotation, pose.bestTranslation);
-        pauseAudio();
+        //playAudio();
+      }
+      //u2
+      else if(markers[0].id < 340){
+        updateObject(model3, pose.bestRotation, pose.bestTranslation);
+        //playAudio();
+      }
+      //scorpions
+      else if(markers[0].id < 670){
+        updateObject(model4, pose.bestRotation, pose.bestTranslation);
+        //playAudio();
+      }
+      //hello seahorse!
+      else if(markers[0].id < 900){
+        updateObject(model5, pose.bestRotation, pose.bestTranslation);
+      }
+      //one direction
+      else if(markers[0].id < 1010){
+        updateObject(model6, pose.bestRotation, pose.bestTranslation);
       }
 
 
@@ -235,9 +269,24 @@
 
       model1.rotation.z -= step;
     }
+    else{
+      pauseAudio();
+      hideObject(model1);
+      hideObject(model2);
+      hideObject(model3);
+      hideObject(model4);
+      hideObject(model5);
+      hideObject(model6);
+    }
 
     texture.children[0].material.map.needsUpdate = true;
   };
+
+  function hideObject(object){
+    object.scale.x = 0;
+    object.scale.y = 0;
+    object.scale.z = 0;
+  }
 
   function updateObject(object, rotation, translation){
     object.scale.x = modelSize;
