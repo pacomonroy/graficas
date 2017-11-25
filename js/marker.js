@@ -5,6 +5,7 @@
   var camera1, camera2, camera3, camera4;
   var plane1, plane2, model, texture;
   var step = 0.0;
+  var light;
 
   var modelSize = 35.0; //millimeters
 
@@ -97,6 +98,21 @@
       context.strokeRect(corners[0].x - 2, corners[0].y - 2, 4, 4);
     }
   };
+
+  function createLight(){
+    light = new THREE.SpotLight( 0xffffff, 1 );
+    light.position.set( 15, 40, 35 );
+    light.angle = Math.PI / 4;
+    light.penumbra = 0.05;
+    light.decay = 2;
+    light.distance = 200;
+    light.castShadow = true;
+    light.shadow.mapSize.width = 1024;
+    light.shadow.mapSize.height = 1024;
+    light.shadow.camera.near = 10;
+    light.shadow.camera.far = 200;
+    scene4.add( light );
+  }
 
   function createRenderers(){
     renderer1 = new THREE.WebGLRenderer();
