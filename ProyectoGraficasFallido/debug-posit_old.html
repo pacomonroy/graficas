@@ -1,0 +1,69 @@
+<html>
+
+<head>
+  <title>Augmented Reality</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Parallax Template - Materialize</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <script type="text/javascript" src="js/Three.js"></script>
+
+  <script type="text/javascript" src="js/svd.js"></script>
+  <script type="text/javascript" src="js/posit1.js"></script>
+  <script type="text/javascript" src="js/cv.js"></script>
+  <script type="text/javascript" src="js/aruco.js"></script>
+  <script type="text/javascript" src="js/marker.js"></script>
+
+
+</head>
+
+<body style="text-align: center; font-family: monospace;">
+  <nav class="white" role="navigation">
+    <div class="nav-wrapper container">
+      <ul class="right hide-on-med-and-down">
+        <li><a href="index.html">Go Back</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="side-nav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+  <video id="video" width=640 height=480 autoplay="true" style="display:none;"></video>
+
+  <h1 class="header center amber-text text-darken-2">Chanson</h1>
+  <div style="width: 100%;">
+    <div style="width: 650px; margin-left:auto; margin-right:auto;">
+      <canvas id="canvas" style="width: 640px; height: 480px; float: left; display: none;"></canvas>
+      <div id="container" style="width: 320px; height: 240px; float: left; "></div>
+      <div style="clear: both;"></div>
+      <div style="float: left; ">
+        <div id="container1" style="width: 320px; height: 240px; display: none;"></div>
+        <div id="pose1" style=" display: none;" ></div>
+      </div>
+      <div style="float: left; display: none;">
+        <div id="container2" style="width: 320px; height: 240px; "></div>
+        <div id="pose2" style=" display: none;"></div>
+      </div>
+    </div>
+  </div>
+  <div style="clear: both;"></div>
+  <div style="margin: 15px;"><strong>Powered by <a href="http://code.google.com/p/js-aruco/">js-aruco</a> and <a href="https://github.com/mrdoob/three.js">Three.js</a></strong></div>
+  <audio id="myAudio">
+    <source src="bonjovi.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+</body>
+
+</html>
